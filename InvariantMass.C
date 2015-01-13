@@ -1,5 +1,5 @@
 /*
-root -l examples/tutorial/InvariantMass.C'("ee_zh.root","plots_mbb.root")'
+root -l -b -q tutorial/InvariantMass.C'("step_1.root", "step_1_plots.root")'
 */
 
 //------------------------------------------------------------------------------
@@ -22,7 +22,7 @@ void InvariantMass(const char *inputFile, const char *outputFile)
  TClonesArray *branchJet  = treeReader->UseBranch("Jet");
 
  // Book histograms
- TH1 *histnbj = new TH1F("nbj", "Number of b-jets", 5, 0.0, 5.0);
+ TH1 *histnbjet = new TH1F("nbjet", "Number of b-jets", 5, 0.0, 5.0);
  TH1 *histMbb = new TH1F("mbb", "M_{inv}(b, b)", 75, 50.0, 200.0);
 
  Int_t numberOfSelectedEvents = 0;
@@ -51,7 +51,7 @@ void InvariantMass(const char *inputFile, const char *outputFile)
      if(jet->BTag) bJets.push_back(jet);
    }
 
-   histnbj->Fill(bJets.size());
+   histnbjet->Fill(bJets.size());
 
    // select events with at least 2 b-jets and 2 opposite sign muons
    if(bJets.size() < 2) continue;
@@ -74,7 +74,7 @@ void InvariantMass(const char *inputFile, const char *outputFile)
  TFile *fout = TFile::Open(outputFile,"RECREATE");
  fout->cd();
 
- histnbj->Write();
+ histnbjet->Write();
  histMbb->Write();
 
 }
