@@ -254,6 +254,8 @@ public:
 
   Float_t EhadOverEem; // ratio of the hadronic versus electromagnetic energy deposited in the calorimeter
 
+  Float_t RelIso; //relative isolation
+
   TRef Particle; // reference to generated particle
 
   static CompBase *fgCompare; //!

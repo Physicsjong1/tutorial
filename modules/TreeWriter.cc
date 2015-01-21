@@ -445,6 +445,8 @@ void TreeWriter::ProcessElectrons(ExRootTreeBranch *branch, TObjArray *array)
 
     entry->EhadOverEem = 0.0;
 
+    entry->RelIso = candidate->RelIso;
+
     entry->Particle = candidate->GetCandidates()->At(0);
   }
 }
