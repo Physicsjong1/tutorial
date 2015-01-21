@@ -491,6 +491,8 @@ void TreeWriter::ProcessMuons(ExRootTreeBranch *branch, TObjArray *array)
 
     entry->DeltaR = candidate->DeltaR;
 
+    entry->RelIso = candidate->RelIso;
+
     entry->Particle = candidate->GetCandidates()->At(0);
   }
 }

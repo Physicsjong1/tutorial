@@ -128,6 +128,7 @@ Candidate::Candidate() :
   Dxy(0), SDxy(0), Xd(0), Yd(0), Zd(0),
   NCharged(0),
   DeltaR(-1.0),
+  RelIso(-1.0),
   NNeutrals(0),
   Beta(0),
   BetaStar(0),
@@ -245,6 +246,7 @@ void Candidate::Copy(TObject &obj) const
 
   object.NCharged = NCharged;
   object.DeltaR = DeltaR;
+  object.RelIso = RelIso;
   object.NNeutrals = NNeutrals;
   object.Beta = Beta;
   object.BetaStar = BetaStar;
@@ -323,5 +325,6 @@ void Candidate::Clear(Option_t* option)
   Tau[3] = 0.0;
   Tau[4] = 0.0;
   DeltaR = -1.0;
+  RelIso = -1.0;
   fArray = 0;
 }

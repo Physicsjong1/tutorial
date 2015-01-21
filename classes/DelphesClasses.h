@@ -280,6 +280,8 @@ public:
 
   Float_t DeltaR; //jet cleaning
 
+  Float_t RelIso; //relative isolation
+
   TRef Particle; // reference to generated particle
 
   static CompBase *fgCompare; //!
@@ -475,6 +477,9 @@ public:
 
   // Jet cleaning
   Float_t DeltaR;
+
+  // Relative isolation
+  Float_t RelIso;
 
   // PileUpJetID variables
 
